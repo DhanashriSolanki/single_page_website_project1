@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="stylesheet" href="styles.css">
+        <title>Coffee Cafe</title>
+        <style>
+            
+            
+            body{
+                
+                font-family:  "Roboto", sans-serif;
+                margin:0;
+            }
+            
+            .search{
+                background-color:white;
+                color:brown;
+                border-radius: 5px;
+
+            }
+
+            .search:hover{
+                background-color:brown;
+                color:white;
+            }
+            .icon-lg{
+                font-size: 60px;
+                
+            }
+            .color-white, .name{
+                color: white;
+                /*animation:moveleft 1s linear 1;
+                animation-delay: 0.5s;
+                visibility:hidden;
+                animation-fill-mode:forwards;*/
+            }
+            /*@keyframes moveleft{
+                0%{
+                    transform:translateX(100px);
+                    visibility:visible;
+                }
+                100%{
+                    transform:translateX(0);
+                    visibility:visible;
+                }
+            }*/
+            .navItem{
+                
+                font-size:25px;
+                /*animation:moveleft 1s linear 1;
+                animation-delay: 1.5s;
+                visibility:hidden;
+                animation-fill-mode:forwards;*/
+            }
+            .dropdown-item{
+                font-size: 20px;
+            }
+            .color-brown{
+                color:#543030;
+            }
+            
+            .shop{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                border-radius: 7px;
+                background-color: #EF6F25;
+                color:white;
+                border:none;
+                font-size: 20px;
+            }
+            
+            .learn_more{
+                background-color:#dd9696;
+                color:white;
+                border-radius: 10px;
+                align-items: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border:none;
+
+            }
+            .learn_more:hover{
+                background-color:#AC6B6B;
+                box-shadow: inset;
+            }
+            .card-img-top{
+                padding-top:25px;
+            }
+            
+            .read{
+                align-items: flex-start;
+                border-radius: 7px;
+                background-color: #dd9696;
+                color:white;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border:none;
+            }
+            .read:hover{
+                background-color:#AC6B6B;
+                box-shadow: inset;
+            }
+            .submit{
+                background-color:#dd9696;
+                color:white;
+                border-radius: 10px;
+                align-items: center;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border:none;
+
+            }
+            .submit:hover{
+                background-color:#AC6B6B;
+                box-shadow: inset;
+            }
+            .footer-container {
+            background-color: #543030;
+            padding: 20px;
+            }
+            .remove-bullets{
+                list-style: none;
+            }
+            .flowing {
+            position: relative;
+            width: 100%;
+            height: 500px;
+             /* Set the desired height */
+            }
+
+            .flowing img {
+                position: absolute;
+                top:60px;
+                right:60px;
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+                animation: slide 10s infinite;
+            }
+
+            .flowing img:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            .flowing img:nth-child(2) {
+                animation-delay: 2s;
+            }
+
+            .flowing img:nth-child(3) {
+                animation-delay: 4s;
+            }
+
+            .flowing img:nth-child(4) {
+                animation-delay: 6s;
+            }
+
+            .flowing img:nth-child(5) {
+                animation-delay: 8s;
+            }
+
+            @keyframes slide {
+                0% {
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                20% {
+                    opacity: 1;
+                }
+                30% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            .rotating {
+                display: inline-block;
+                animation: rotate 5s linear infinite;
+            }
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        
+        
+        </style>
+
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg" style="background-color:#543030;">
+                <div class="container-fluid">
+                    <i class="bi bi-cup-hot icon-lg color-white"></i>
+                    
+                    <p class="name" style="color:white;font-family:Brush Script MT, cursive;font-size:35px">Coffee Cave</p>
+                    
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar1">
+                        <div class="navbar-nav ms-auto">
+                            <a href="#" class="nav-item nav-link active navItem" style="color:#dd9696;padding:0px 100px 0px 60px;">Home </a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle navItem" data-bs-toggle="dropdown" style="color:#dd9696;padding:0px 100px 0px 60px;">Our Coffee </a>
+                                <div class="dropdown-menu" style="background-color:#f4cfcf;">
+                                    <a href="#about-us" class="dropdown-item" style="color:#543030;">What's New?</a>
+                                    <a href="#team" class="dropdown-item" style="color:#543030;">Our Partners</a>
+                                </div>
+                            </div>
+                            <a href="#blog" class="nav-item nav-link navItem" style="color:#dd9696;padding:0px 100px 0px 60px;">Blog</a>
+                            <input type="text" placeholder="Search here" style="background-color:#f4cfcf">
+                            <button class="search" type="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel" style="background-color:#543030;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active Carousel">
+                        <img src="cafe.jpg" class="d-block w-100" alt="Carousel 1" style="max-height: 90vh;">
+                        <div class="carousel-caption">
+                            
+                            <div class="col-md-6">
+                                <p style="font-size:120px;font-family:Brush Script MT, cursive;">Welcome to Coffee Cave</p>
+                                <button type="button" class="shop">Shop now</button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="slide2.jpg" class="d-block w-100" alt="Carousel 2" style="max-height: 90vh;">
+                        <div class="carousel-caption">
+                            <div class="col-md-6">
+                                <h2>Despite it being called a ‘bean’, coffee is a fruit. The ‘beans’ grow on a bush and are found in the centre of a berry, known as a coffee cherry.</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="slide1.avif" class="d-block w-100" alt="Carousel 3" style="max-height: 90vh;">
+                        <div class="carousel-caption">
+                            <div class="col-md-6">
+                                <h2>It’s widely known that Brazil is one of the biggest coffee hotspots of the world, but did you know it’s responsible for around a third of all the coffee in the world? Brazil is the number one coffee producer, followed by Vietnam and Colombia.</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="slide4.jpg" class="d-block w-100" alt="Carousel 4" style="max-height: 90vh;">
+                        <div class="carousel-caption">
+                            <div class="col-md-6">
+                                <h2>Before coffee was discovered to be a delicious beverage it was a food. East African tribes would grind the berries then mix them with animal fat and eat them..</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+
+            </header> 
+
+            <br>
+            <main class="m-5">
+                <section class="container m-6" id="about-us">
+                    <hr>
+                    <img class="rotating" src="star1.png" alt="" style="height:30px; width:30px; position: absolute;top:1010px; left: 100px;">
+                    <img class="rotating" src="star1.png" alt="" style="height:40px; width:40px; position: absolute;top:1300px; left: 150px;">
+                    <div class="row">
+                        
+                        <div class="col-md-3 d-flex align-items-center justify-content-center">
+                            <div class="container">
+                                
+                                <br>
+                                <h4 class="display-5 color-brown">Who we are</h4>
+                                <br>
+                                <div class="our_coffee_content">We make delicious coffee for our coffee lovers. We are a team of dedicated coffee fans who celebrate exceptional coffee brands and roasters.</div>
+                                <br>
+                                <br>
+                                <button style="align-self: center;" type="button" class="learn_more">Learn more</button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-center justify-content-center coffee_images">
+                            <div class="container">
+                                
+                                <img src="our coffee.jpg" alt="our coffee" style="height:50vh; width:300px" class="rounded">
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-center justify-content-center coffee_images">
+                            <div class="container">
+                                
+                                <img src="our coffee 2.jpg" alt="our coffee" style="height:50vh; width:300px" class="rounded">
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-center justify-content-center coffee_images">
+                            <div class="container">
+                                
+                                <img src="our coffee 3.jpg" alt="our coffee" style="height:50vh;width:300px" class="rounded">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <br>
+                <br>
+                <img class="rotating" src="star1.png" alt="" style="height:30px; width:30px; position: absolute;top:1010px; right: 10px;">
+                <img class="rotating" src="star1.png" alt="" style="height:30px; width:30px; position: absolute;top:1400px; right: 100px;">
+                <section class="container-fluid m-4" id="our-products" style="background-color:#F4E8E8">
+                    <hr>
+                    <br>
+                    <div class="row">
+                        <p class="display-8 text-center text-muted">OUR SERVICES</p>
+                        <h4 class="display-5 text-center color-brown">Our Products</h4>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <div class="card card1" style="width:450px;">
+                            <img class="card-img-top" src="our products 1.webp" alt="espresso" style="height:60vh;width:350px;align-self: center;">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Espresso</h3>
+                                <p class="card-text">Espresso is a delicious concentrated form of coffee, served in shots and it’s often the coffee base of many other beverages and it's usually served in small demitasse-style cups for this reason.</p>
+                            </div>
+                            </div>
+                            <img class="rotating" src="heart.png" alt="" style="height:40px; width:40px; position: absolute;top:1910px; left: 700px;">
+                            <img class="rotating" src="tri.png" alt="" style="height:30px; width:30px; position: absolute;top:1610px; left: 200px;">
+                            <img class="rotating" src="heart.png" alt="" style="height:30px; width:30px; position: absolute;top:2010px; right: 600px;">
+                            <img class="rotating" src="tri.png" alt="" style="height:30px; width:30px; position: absolute;top:2310px; right: 60px;">
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <div class="card card2" style="width:450px;">
+                            <img class="card-img-top" src="cappucino.jpg" alt="cappucino" style="height:60vh;width:350px;align-self: center;">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Cappucino</h3>
+                                <p class="card-text">A cappuccino is the perfect balance of espresso, steamed milk and foam. This coffee is all about the structure and the even splitting of all elements into equal thirds.</p>
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <div class="card card3" style="width:450px;">
+                            <img class="card-img-top" src="latte.jpg" alt="latte" style="height:60vh;width:350px;align-self: center;">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Latte</h3>
+                                <p class="card-text">A caffè latte is a milk coffee that has a silky layer of foam to highlight the drink. A latte will be made up of two shots of espresso, steamed milk and a final layer of frothed milk on top.</p>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </section>
+
+
+                <section class="container-fluid m-4" id="blog">
+                    <br>
+                    <h4 class="display-5 text-center color-brown">Latest Blog Posts</h4>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col md-3 d-flex align-items-center justify-content-center">
+                                <div class="card card4" style="width:270px;height:400px;">
+                                    <img class="card-img-top" src="blog1.webp" alt="latte" style="height:50vh;width:200px;align-self: center;">
+                                    <div class="card-body text-center">
+                                        
+                                        <div class="card-text" style="font-size:small">
+                                            <p>"Good communication is just as stimulating as black coffee, and just as hard to sleep after."</p>
+                                            <p class="text-muted">- Anne Morrow Lindbergh</p>
+                                            
+                                            <button type="button" class="read">Read more</button>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col md-3 d-flex align-items-center justify-content-center">
+                                <div class="card card5" style="width:270px;height:400px;">
+                                    <img class="card-img-top" src="blog2.webp" alt="latte" style="height:50vh;width:200px;align-self: center;">
+                                    <div class="card-body text-center">
+                                        
+                                        <div class="card-text" style="font-size:small">
+                                            <p>"Coffee is the common man's gold, and like gold, it brings to every person the feeling of luxury and nobility."</p>
+                                            <p class="text-muted"> - Sheik-Abd-al-Kadir</p>
+                                            <button type="button" class="read">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col md-3 d-flex align-items-center justify-content-center">
+                                <div class="card card6" style="width:270px;height:400px;">
+                                    <img class="card-img-top" src="blog3.jpg" alt="latte" style="height:50vh;width:200px;align-self: center;">
+                                    <div class="card-body text-center">
+                                        
+                                        <div class="card-text" style="font-size:small">
+                                            <p>I'm not saying I'm addicted to coffee, but I don't know what I'd do if I couldn't get my daily cup of caffeine.</p>
+                                            <p class="text-muted">- Anonymous</p>
+                                            <button type="button" class="read">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col md-3 d-flex align-items-center justify-content-center">
+                                <div class="card card7" style="width:270px;height:400px;">
+                                    <img class="card-img-top" src="blog4.jpg" alt="latte" style="height:50vh;width:200px;align-self: center;">
+                                    <div class="card-body text-center">
+                                        
+                                        <div class="card-text" style="font-size:small">
+                                            <p>"Coffee is a beverage that puts one to sleep when not drank."</p>
+                                            <p class="text-muted">- Alphonse Allais</p>
+                                            <button type="button" class="read">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <br>
+                
+
+                <section id="blog" class="container-fluid m-4" style="background-color:#FCCFC8;">
+                    <br>
+                    <p class="display-8 text-center text-muted">OUR CONTACTS</p>
+                    <h4 class="display-5 text-center color-brown">Join Our Blog</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container">
+                                <p class="text-muted text-center fs-4">Here's our Contact Info</p>
+                                <div class="text-black-s text-center fs-5">Our Email</div>
+                                <div class="text-black-50 text-center fs-5">coffee@cafe.com</div>
+                                <div class="text-black-s text-center fs-5">Our Phone No.</div>
+                                <div class="text-black-50 text-center fs-5">+91 ***** *****</div>
+                                <div class="text-black-s text-center fs-5">Our Address</div>
+                                <div class="text-black-50 text-center fs-6">BTM Layout, Bangalore <br> Karnatake 560 XXX</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container">
+                                <div class="container p-3">
+                                <div class="card shadow" style="width: 100%; max-width: 400px;">
+                                    <div class="card" style="height: 380px;">
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="name" class="form-label">Enter Your Name</label>
+                                                    <input type="text" class="form-control" name="name" id="name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="emailid" class="form-label">Enter Your Email</label>
+                                                    <input type="email" class="form-control" name="email" id="emailid">
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="message" class="form-label">Enter Your Review</label>
+                                                    <textarea class="form-control" name="message" id="message"></textarea>
+                                                </div>
+                                                <br>
+                                                <div class="form-group text-center">                                               
+                                                    <input type="submit" class="submit" value="Send Message">
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="container flowing">
+                                <img src="flow1.png" alt="Flow 1">
+                                <img src="flow2.png" alt="Flow 2">
+                                <img src="flow3.png" alt="Flow 3">
+                                <img src="flow4.png" alt="Flow 4">
+                                <img src="flow5.png" alt="Flow 5">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-content color-white">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <i class="bi bi-cup-hot icon-lg color-white"></i>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium suscipit quis quasi doloremque fugit, blanditiis, nisi quam harum cumque, quidem voluptas neque repudiandae nemo? Dignissimos quibusdam eum eligendi ad ullam.</p>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <p class="fs-5">Quick Links</p>
+                                <ul class="footer-links remove-bullets">
+                                    <li><a href="#" class="text-white">About Us</a></li>
+                                    <li><a href="#" class="text-white">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>All rights reserved &copy; 2023, <a href="coffee.cave" class="text-white">Coffee.Cave</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            
+
+            <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+            <script src="https://unpkg.com/scrollreveal"></script>
+            
+            <script>
+                window.sr=ScrollReveal();
+                sr.reveal('.navItem ,.name,.icon-lg',{
+                    duration:1500,
+                    origin:'top',
+                    distance:'80px',
+                    opacity: 0, 
+                    easing: 'ease-in',
+                });
+                sr.reveal('.Carousel',{
+                    duration:2500,
+                    origin:'bottom',
+                    opacity: 0, 
+                    easing: 'ease-in',
+                    
+                });
+                sr.reveal('.our_coffee_content',{
+                    duration:2500,
+                    origin:'left',
+                });
+                sr.reveal('.color-brown',{
+                    duration:2000,
+                    origin:'left',
+                });
+                sr.reveal('.learn_more',{
+                    duration:2800,
+                    origin:'left',
+                });
+                sr.reveal('.coffee_images',{
+                    duration:3200,
+                    origin:'right',
+                    distance:'200px'
+                });
+                sr.reveal('.card1',{
+                    duration:2000,
+                    origin:'bottom',
+                    distance:'100px'
+                });
+                sr.reveal('.card2',{
+                    duration:3000,
+                    origin:'bottom',
+                    distance:'100px'
+                });
+                sr.reveal('.card3',{
+                    duration:4000,
+                    origin:'bottom',
+                    distance:'100px'
+                });
+                sr.reveal('.card4',{
+                    duration:3000,
+                    origin:'left',
+                    distance:'200px'
+                });
+                sr.reveal('.card5',{
+                    duration:2000,
+                    origin:'left',
+                    distance:'100px'
+                });
+                sr.reveal('.card6',{
+                    duration:2000,
+                    origin:'right',
+                    distance:'100px'
+                });
+                sr.reveal('.card7',{
+                    duration:3000,
+                    origin:'right',
+                    distance:'100px',
+                    opacity: 0, 
+                    easing: 'ease-in',
+                });
+                sr.reveal('#blog',{
+                    duration:2000,
+                    origin:'right',
+                    opacity: 0, 
+                    easing: 'ease-in',
+                });
+            </script>
+
+    </body>
+</html>
